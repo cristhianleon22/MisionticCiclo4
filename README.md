@@ -1,4 +1,8 @@
 # MisionticCiclo4
+![image](https://user-images.githubusercontent.com/69023892/140839426-b5914439-ffc6-4602-a7e0-161bc8d0bb79.png)
+
+
+
 
 | Nombre                              | Rol dentro del equipo |
 | ----------------------------------- | --------------------- |
