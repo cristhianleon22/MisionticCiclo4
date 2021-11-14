@@ -12,9 +12,8 @@
 | Cristian Camilo Carrillo Cubillos   | Tester |
 | Brayan Alexis Arenas Forero      	  | Administrador de la configuración  |
 
-documento manifiesto:https://docs.google.com/document/d/1zF158_KbjrcBfmLO249V6Ll84HBipbqeiYbLJFNGyUU/edit
+documentacion proyecto:https://docs.google.com/document/d/1zF158_KbjrcBfmLO249V6Ll84HBipbqeiYbLJFNGyUU/edit
 
-Ingresé
 
 
 
