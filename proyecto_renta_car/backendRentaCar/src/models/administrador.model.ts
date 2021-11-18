@@ -57,10 +57,6 @@ export class Administrador extends Entity {
   })
   clave: string;
 
-  @property({
-    type: 'string',
-  })
-  rolesId?: string;
 
   constructor(data?: Partial<Administrador>) {
     super(data);

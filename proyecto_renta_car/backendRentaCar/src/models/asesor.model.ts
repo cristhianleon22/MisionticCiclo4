@@ -51,10 +51,6 @@ export class Asesor extends Entity {
   })
   clave: string;
 
-  @property({
-    type: 'string',
-  })
-  rolesId?: string;
 
   constructor(data?: Partial<Asesor>) {
     super(data);
