@@ -14,3 +14,4 @@ export * from './asesor.controller';
 
 export * from './cliente.controller';
 export * from './codeudor.controller';
+export * from './solicitud.controller';
