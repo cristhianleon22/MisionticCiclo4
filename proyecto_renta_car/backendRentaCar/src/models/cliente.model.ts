@@ -46,16 +46,16 @@ export class Cliente extends Entity {
   correo: string;
 
   @property({
-    type: 'boolean',
+    type: 'string',
     required: true,
   })
-  cartalaboral: boolean;
+  cartaLaboral: string;
 
   @property({
     type: 'string',
     required: true,
   })
-  contrasena: string;
+  clave: string;
 
 
   constructor(data?: Partial<Cliente>) {
