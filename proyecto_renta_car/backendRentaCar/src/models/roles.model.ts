@@ -1,6 +1,8 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Asesor} from './asesor.model';
 
+
+
 @model()
 export class Roles extends Entity {
   @property({

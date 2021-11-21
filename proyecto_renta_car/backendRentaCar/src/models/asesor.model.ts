@@ -52,6 +52,10 @@ export class Asesor extends Entity {
   })
   clave: string;
 
+  @property({
+    type: 'string',
+  })
+  rolesId?: string;
   /*
 
   @belongsTo(() => Roles)
