@@ -7,3 +7,9 @@ export * from './solicitud-vehiculo.controller';
 export * from './cliente-solicitud.controller';
 export * from './codeudor-solicitud.controller';
 export * from './asesor-solicitud.controller';
+export * from './roles.controller';
+export * from './tipovehiculo.controller';
+export * from './vehiculo.controller';
+export * from './asesor.controller';
+
+export * from './cliente.controller';
