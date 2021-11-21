@@ -5,3 +5,4 @@ export * from './cliente.repository';
 export * from './roles.repository';
 export * from './codeudor.repository';
 export * from './asesor.repository';
+export * from './administrador.repository';
