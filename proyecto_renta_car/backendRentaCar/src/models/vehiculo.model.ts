@@ -85,6 +85,11 @@ export class Vehiculo extends Entity {
   @belongsTo(() => TipoVehiculo)
   tipoVehiculoId: string;
 
+  @property({
+    type: 'string',
+  })
+  solicitudId?: string;
+
   constructor(data?: Partial<Vehiculo>) {
     super(data);
   }
