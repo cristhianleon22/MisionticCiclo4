@@ -37,6 +37,11 @@ export class Solicitud extends Entity {
   @hasOne(() => Vehiculo)
   vehiculo: Vehiculo;
 
+  @property({
+    type: 'string',
+  })
+  clienteId?: string;
+
   constructor(data?: Partial<Solicitud>) {
     super(data);
   }
