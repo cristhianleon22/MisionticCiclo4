@@ -1,5 +1,6 @@
-import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Entity, model, property, belongsTo, hasMany} from '@loopback/repository';
 import {Roles} from './roles.model';
+import {Solicitud} from './solicitud.model';
 
 @model()
 export class Asesor extends Entity {
@@ -56,6 +57,9 @@ export class Asesor extends Entity {
     type: 'string',
   })
   rolesId?: string;
+
+  @hasMany(() => Solicitud)
+  solicituds: Solicitud[];
   /*
 
   @belongsTo(() => Roles)

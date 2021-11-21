@@ -6,3 +6,4 @@ export * from './roles-administrador.controller';
 export * from './solicitud-vehiculo.controller';
 export * from './cliente-solicitud.controller';
 export * from './codeudor-solicitud.controller';
+export * from './asesor-solicitud.controller';

@@ -47,6 +47,11 @@ export class Solicitud extends Entity {
   })
   codeudorId?: string;
 
+  @property({
+    type: 'string',
+  })
+  asesorId?: string;
+
   constructor(data?: Partial<Solicitud>) {
     super(data);
   }
