@@ -17,10 +17,12 @@ import {
   del,
   requestBody,
   response,
+  HttpErrors,
 } from '@loopback/rest';
-import {Administrador} from '../models';
+import {Llaves} from '../config/llaves';
+import {Administrador, Credenciales} from '../models';
 import {AdministradorRepository} from '../repositories';
-import { AutenticacionService } from '../services';
+import {AutenticacionService} from '../services';
 const fetch = require('node-fetch');// se agrega fetch
 
 export class AdministradorController {
@@ -31,6 +33,43 @@ export class AdministradorController {
     public servicioAutenticacion: AutenticacionService
   ) {}
 
+  
+  @post("/identificarAdministrador", {
+    responses:{
+      '200':{
+        description:"Identificación de usuarios"
+      }
+    }
+  })
+
+  async identificarAdministrador(
+    @requestBody() credenciales: Credenciales
+  ){
+    let a = await this.servicioAutenticacion.IdentificarAdministrador(credenciales.usuario, credenciales.clave);
+    if(a){
+      let token = this.servicioAutenticacion.GenerarTokenJWT(a);
+      return{
+        datos:{
+          id: a.id,
+          documento: a.documento,
+          nombre: a.nombre,
+          apellido: a.apellido,
+          direccion: a.direccion,
+          telefono: a.telefono,
+          correo: a.correo,
+          sede: a.sede,
+          clave: a.clave,
+          roles: a.rolesId
+        },
+        tk: token
+      }
+    }else{
+      throw new HttpErrors[401]("Datos invalidos");
+    }
+  }  
+  
+  
+  
   @post('/administradors')
   @response(200, {
     description: 'Administrador model instance',
@@ -57,9 +96,9 @@ export class AdministradorController {
     // notificar usurio
     let destino = administrador.correo;
     let asunto = 'registro en la plataforma RENTA CAR';
-    let contenido = `hola ${administrador.nombre}, su nombre de usuario es ${administrador.correo}, su contraseña es :${clave} `;
+    let contenido = `hola ${administrador.nombre}, su nombre de usuario es ${administrador.correo}, su contraseña es :${claveA} `;
     fetch(
-      `http://127.0.0.1:5000/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`,
+      `${Llaves.urlServicioNotificaciones}/envio-correo?correo_destino=${destino}&asunto=${asunto}&contenido=${contenido}`,
     ).then((data: any) => {
       console.log(data);
     });
