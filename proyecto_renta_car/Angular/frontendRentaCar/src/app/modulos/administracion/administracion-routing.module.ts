@@ -4,6 +4,10 @@ import { BuscarAdministradorComponent } from './administradores/buscar-administr
 import { CrearAdministradorComponent } from './administradores/crear-administrador/crear-administrador.component';
 import { EditarAdministradorComponent } from './administradores/editar-administrador/editar-administrador.component';
 import { EliminarAdministradorComponent } from './administradores/eliminar-administrador/eliminar-administrador.component';
+import { BuscarAsesorComponent } from './asesores/buscar-asesor/buscar-asesor.component';
+import { CrearAsesorComponent } from './asesores/crear-asesor/crear-asesor.component';
+import { EditarAsesorComponent } from './asesores/editar-asesor/editar-asesor.component';
+import { EliminarAsesorComponent } from './asesores/eliminar-asesor/eliminar-asesor.component';
 
 const routes: Routes = [
   {
@@ -21,6 +25,22 @@ const routes: Routes = [
   {
     path:'buscar-administrador',
     component: BuscarAdministradorComponent
+  },
+  {
+    path:'crear-asesor',
+    component: CrearAsesorComponent
+  },
+  {
+    path:'editar-asesor',
+    component: EditarAsesorComponent
+  },
+  {
+    path:'eliminar-asesor',
+    component: EliminarAsesorComponent
+  },
+  {
+    path:'buscar-asesor',
+    component: BuscarAsesorComponent
   }
 
 
