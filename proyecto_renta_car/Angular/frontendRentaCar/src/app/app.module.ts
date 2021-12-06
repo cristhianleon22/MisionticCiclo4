@@ -7,6 +7,9 @@ import { BarraNavegacionComponent } from './plantilla/barra-navegacion/barra-nav
 import { PiePaginaComponent } from './plantilla/pie-pagina/pie-pagina.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
+import { MisionComponent } from './plantilla/mision/mision.component';
+import { VisionComponent } from './plantilla/vision/vision.component';
+import { ImagenesComponent } from './plantilla/imagenes/imagenes.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ErrorComponent } from './plantilla/error/error.component';
     BarraNavegacionComponent,
     PiePaginaComponent,
     InicioComponent,
-    ErrorComponent
+    ErrorComponent,
+    MisionComponent,
+    VisionComponent,
+    ImagenesComponent
   ],
   imports: [
     BrowserModule,

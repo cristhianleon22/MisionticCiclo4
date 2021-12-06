@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
+import { MisionComponent } from './plantilla/mision/mision.component';
+import { VisionComponent } from './plantilla/vision/vision.component';
 
 const routes: Routes = [
   
@@ -15,6 +17,16 @@ const routes: Routes = [
     redirectTo:'/inicio'
   },
   {
+    //solo se importa cuando llamen al módulo mision
+    path:'mision',
+    component: MisionComponent
+  },
+  {
+    //solo se importa cuando llamen al módulo vision
+    path:'vision',
+    component: VisionComponent
+  },
+   {
     //solo se importa cuando llamen al módulo seguridad
     path:'seguridad',
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule)
