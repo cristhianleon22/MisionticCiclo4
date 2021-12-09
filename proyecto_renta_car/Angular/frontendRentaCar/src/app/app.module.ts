@@ -10,6 +10,7 @@ import { ErrorComponent } from './plantilla/error/error.component';
 import { MisionComponent } from './plantilla/mision/mision.component';
 import { VisionComponent } from './plantilla/vision/vision.component';
 import { ImagenesComponent } from './plantilla/imagenes/imagenes.component';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ImagenesComponent } from './plantilla/imagenes/imagenes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

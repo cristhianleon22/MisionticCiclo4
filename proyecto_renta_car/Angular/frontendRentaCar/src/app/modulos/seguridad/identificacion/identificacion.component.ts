@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// const cryptoJS = require("cryptojs"); 
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
+import * as cryptoJS from "crypto-js"; 
+import { Router } from '@angular/router';
 
 //logica del componente
 @Component({
@@ -14,22 +16,29 @@ export class IdentificacionComponent implements OnInit {
    //los esquemas ejemplo esquema de correo email 
   fgValidador: FormGroup = this.fb.group({
     'usuario': ['', [Validators.required, Validators.email]],
-    'clave':['',[Validators.required]] 
+    'clave': ['',[Validators.required]] 
   });  
   
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, 
+    private servicioSeguridad: SeguridadService, 
+    private router: Router) { }
+
   //este metodo se ejecuta cuando el componente se inicializa
+  
   ngOnInit(): void {
   }
 
     //crear metodo para obtener los datos que están en usuario y en clave
   IdentificarUsuario(){
-    
     let usuario = this.fgValidador.controls["usuario"].value;
     let clave = this.fgValidador.controls["clave"].value;
-  //  let claveCifrada = cryptoJS.MD5(clave); no funciona Error: src/app/modulos/seguridad/identificacion/identificacion.component.ts:3:18 - error TS2591: Cannot find name 'require'
-    alert(usuario)
-    alert(clave)
+    let claveCifrada = cryptoJS.MD5(clave).toString(); 
+    this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos:any) => {
+      this.servicioSeguridad.AlmacenarSesion(datos);
+      this.router.navigate(["/inicio"]);
+    }, (error: any) => {
+      // ok
+      alert("Datos invalidos")
+    })
   }
-
 }

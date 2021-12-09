@@ -3,25 +3,26 @@
       <a routerLink="/inicio" class="brand-logo">Logo</a>
       <a routerLink="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a routerLink="/inicio">Inicio</a></li>
-        <li><a routerLink="mision">Misión</a></li>
-        <li><a routerLink="vision">Visión</a></li>
-        <li><a routerLink="mobile.html">Contacto</a></li>
-        <li><a routerLink="/administracion/crear-administrador">Gestión</a></li>
-        <li><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
-        <li><a routerLink="mobile.html">Registro</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/inicio">Inicio</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="mision">Misión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="vision">Visión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Contacto</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/administracion/crear-administrador">Gestión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Registro</a></li>
       </ul>  
     </div>
 </nav>
 
 
 <ul class="sidenav" id="mobile-demo">
-    <li><a routerLink="/inicio">Inicio</a></li>
-    <li><a routerLink="mision">Misión</a></li>
-    <li><a routerLink="vision">Visión</a></li>
-    <li><a routerLink="mobile.html">Contacto</a></li>
-    <li><a routerLink="/administracion/crear-administrador">Gestión</a></li>
-    <li><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
-    <li><a routerLink="mobile.html">Registro</a></li>
-    
-</ul>
+    <li *ngIf="seInicioSesion"><a routerLink="/inicio">Inicio</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="mision">Misión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="vision">Visión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Contacto</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/crear-administrador">Gestión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Registro</a></li>
+ </ul>

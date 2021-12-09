@@ -37,7 +37,7 @@ export class AdministradorController {
   @post("/identificarAdministrador", {
     responses:{
       '200':{
-        description:"Identificación de usuarios"
+        description: "Identificación de usuarios"
       }
     }
   })
