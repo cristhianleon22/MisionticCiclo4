@@ -1,0 +1,109 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/asesor-home" class="breadcrumb">Home</a>
+      <a routerLink="/vehiculos/buscar-vehiculo" class="breadcrumb">Vehiculos</a>
+      <a routerLink="/vehiculos/crear-vehiculo" class="breadcrumb">Crear Vehiculos</a>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="GuardarVehiculo()"class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="matricula" type="text" class="validate" required>
+        <label for="matricula">Matricula</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="marca" type="text" class="validate" required>
+        <label for="marca">Marca</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="linea" type="text" class="validate" required>
+        <label for="linea">Linea</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="modelo" type="text" class="validate" required>
+        <label for="modelo">Modelo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="cilindraje" type="text" class="validate" required>
+        <label for="cilindraje">Cilindraje</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="color" type="text" class="validate" required>
+        <label for="color">Color</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="precio" type="number" class="validate" required>
+        <label for="precio">Precio</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="foto" type="text" class="validate" required>
+        <label for="foto">Foto</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="video" type="text" class="validate" required>
+        <label for="precio">Video</label>
+      </div>
+
+        <label>Estado</label>
+        <div class="input-field col s6">
+          <select multiple formControlName="estado" class="custom-select" class="browser-default">
+            <option value="" disabled>Elige un estado</option>
+            <option value="rentar">En renta</option>
+            <option value="comprar">En venta</option>
+            <option value="rentado">Rentado</option>
+            <option value="comprado">Comprado</option>
+            <option value="vendido">Vendido</option>
+          </select>
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="descripcion" type="text" class="validate" required>
+        <label for="descripcion">Descripcion</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Ubicación</label>
+      <div class="input-field col s12">
+        <select multiple formControlName="ubicacion" class="custom-select" class="browser-default">
+          <option value="" disabled>Elige una ubicacion</option>
+          <option *ngFor="let sede of listadoSedes"  [ngValue]="sede.ciudad">
+            {{sede.ciudad}}
+          </option>
+        </select>
+      </div>
+    </div>
+
+  <div class="row">
+    <label>Tipo de vehiculo</label>
+    <div class="input-field col s12">
+      <select multiple formControlName="tipoVehiculo" class="custom-select" class="browser-default">
+        <option value="" disabled>Elige un tipo de vehiculo</option>
+        <option *ngFor="let tipoVehiculo of listadoTipoVehiculo"  [ngValue]="tipoVehiculo.id">
+          {{tipoVehiculo.nombre}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #009688 teal" type="submit" style="width:100%;">Crear Vehiculo</button>
+    </div>
+  </form>
+</div>
+

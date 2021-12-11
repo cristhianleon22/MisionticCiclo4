@@ -1,0 +1,35 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/administrador" class="breadcrumb">Home</a>
+      <a routerLink="/vehiculos/buscar-tipo-vehiculo" class="breadcrumb">Tipo de Vehiculos</a>
+      <a routerLink="/vehiculos/eliminar-tipo-vehiculo" class="breadcrumb">Eliminar tipo de vehiculos</a>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="EliminarTipoVehiculo()"class="col s12">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="nombre" type="text" class="validate" required>
+        <label for="nombre" class="active">Nombre</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="porcentaje" type="number" class="validate" required>
+        <label for="porcentaje" class="active">Porcentaje (%) </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="descripcion" type="text" class="validate" required>
+        <label for="descripcion" class="active">Descripcion</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #009688 teal" type="submit" style="width:100%;">Eliminar Tipo de Vehiculo</button>
+    </div>
+  </form>
+</div>

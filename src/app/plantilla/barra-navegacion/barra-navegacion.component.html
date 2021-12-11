@@ -1,0 +1,26 @@
+<nav>
+  <div class="nav-wrapper #00897b teal darken-1" >
+    <a routerLink="/inicio" class="brand-logo">Logo</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="/inicio">Inicio</a></li>
+      <li><a routerLink="/mision">Misión</a></li>
+      <li><a routerLink="/vision">Visión</a></li>
+      <li><a routerLink="/contacto">Contacto</a></li>
+      <li *ngIf="seInicioSesionAsesor"><a routerLink="/empleados/asesor-home">Asesor</a></li>
+      <li *ngIf="seInicioSesionAdministrador"><a routerLink="/empleados/administrador">Administrador</a></li>
+      <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+      <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificacion-cliente">Iniciar sesión</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li *ngIf="!seInicioSesion"><a routerLink="/inicio">Inicio</a></li>
+  <li><a routerLink="/mision">Misión</a></li>
+  <li><a routerLink="/vision">Visión</a></li>
+  <li><a routerLink="/contacto">Contacto</a></li>
+  <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrar-sesion">Cerrar Sesión</a></li>
+  <li *ngIf="seInicioSesionAsesor"><a routerLink="/empleados/asesor-home">Asesor</a></li>
+  <li *ngIf="!seInicioSesion"><a routerLink="/seguridad/identificacion">Iniciar sesión</a></li>
+</ul>

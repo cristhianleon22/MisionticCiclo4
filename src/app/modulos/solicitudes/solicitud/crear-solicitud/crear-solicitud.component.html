@@ -1,0 +1,71 @@
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="SolicitarVehiculo()" class="col s12">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s6">
+        <input readonly formControlName="matricula" type="text" class="validate" required>
+        <label for="matricula" class="active">Matricula</label>
+      </div>
+      <div class="input-field col s6">
+        <input readonly formControlName="marca" type="text" class="validate" required>
+        <label for="marca" class="active">Marca</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input readonly formControlName="linea" type="text" class="validate" required>
+        <label for="linea" class="active">Linea</label>
+      </div>
+      <div class="input-field col s6">
+        <input readonly formControlName="modelo" type="text" class="validate" required>
+        <label for="modelo" class="active">Modelo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input readonly formControlName="cilindraje" type="text" class="validate" required>
+        <label for="cilindraje" class="active">Cilindraje</label>
+      </div>
+      <div class="input-field col s6">
+        <input readonly formControlName="color" type="text" class="validate" required>
+        <label for="color" class="active">Color</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input readonly formControlName="precio" type="number" class="validate" required>
+        <label for="precio" class="active">Precio</label>
+      </div>
+      <div class="input-field col s6">
+        <input readonly formControlName="estado" type="text" class="validate" required>
+        <label for="estado" class="active">Estado</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input readonly formControlName="descripcion" type="text" class="validate" required>
+        <label for="descripcion" class="active">Descripcion</label>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s12">
+      <input readonly formControlName="ubicacion" type="text" class="validate" required>
+      <label for="ubicacion" class="active">Ubicacion</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input readonly formControlName="tipoVehiculo" type="text" class="validate" required>
+      <label for="ubicacion" class="active">Tipo de vehiculo</label>
+    </div>
+  </div>
+
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #009688 teal" type="submit" style="width:100%;">Enviar Solicitud</button>
+    </div>
+  </form>
+</div>

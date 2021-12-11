@@ -1,0 +1,81 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/administrador" class="breadcrumb">Home</a>
+      <a routerLink="/empleados/buscar-asesor" class="breadcrumb">Asesores</a>
+    </div>
+  </div>
+</nav>
+<div>
+  <a routerLink="/empleados/crear-asesor" class="btn">
+        Crear Asesor
+  </a>
+</div>
+<table class="table responsive">
+<thead>
+  <tr>
+  <th>
+    Nombre
+  </th>
+  <th>
+    Apellido
+  </th>
+  <th>
+    Documento
+  </th>
+  <th>
+    Correo
+  </th>
+  <th>
+    Telefono
+  </th>
+  <th>
+    Direccion
+  </th>
+  <th>
+    Sede
+  </th>
+  <th>
+    Editar
+  </th>
+  <th>
+    Eliminar
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr *ngFor="let asesor of listadoAsesores">
+    <td>
+      {{asesor.nombre}}
+    </td>
+    <td>
+      {{asesor.apellido}}
+    </td>
+    <td>
+      {{asesor.documento}}
+    </td>
+    <td>
+      {{asesor.correo}}
+    </td>
+    <td>
+      {{asesor.telefono}}
+    </td>
+    <td>
+      {{asesor.direccion}}
+    </td>
+    <td>
+      {{asesor.sede}}
+    </td>
+    <td>
+      <a routerLink="/empleados/editar-asesor/{{asesor.id}}" class="btn">
+        Editar
+      </a>
+    </td>
+    <td>
+      <a routerLink="/empleados/eliminar-asesor/{{asesor.id}}" class="btn">
+        Eliminar
+      </a>
+    </td>
+  </tr>
+</tbody>
+</table>

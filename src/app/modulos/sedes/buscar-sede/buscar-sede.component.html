@@ -1,0 +1,52 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/administrador" class="breadcrumb">Home</a>
+      <a routerLink="/sedes/buscar-sede" class="breadcrumb">Sedes</a>
+    </div>
+  </div>
+</nav>
+<div>
+  <a routerLink="/sedes/crear-sede" class="btn">
+        Crear Sede
+  </a>
+</div>
+<table class="table responsive">
+<thead>
+  <tr>
+  <th>
+    Ciudad
+  </th>
+  <th>
+    Departamento
+  </th>
+  <th>
+    Editar
+  </th>
+  <th>
+    Eliminar
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr *ngFor="let sede of listadoSedes">
+    <td>
+      {{sede.ciudad}}
+    </td>
+    <td>
+      {{sede.departamento}}
+    </td>
+    <td>
+      <a routerLink="/sedes/editar-sede/{{sede.id}}" class="btn">
+        Editar
+      </a>
+    </td>
+    <td>
+      <a routerLink="/sedes/eliminar-sede/{{sede.id}}" class="btn">
+        Eliminar
+      </a>
+    </td>
+  </tr>
+</tbody>
+</table>
+

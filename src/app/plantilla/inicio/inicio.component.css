@@ -1,0 +1,26 @@
+.contenedor{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.texto-encima{
+  position: absolute;
+  top: 10px;
+  left: 450px;
+  font-size: 30pt;
+  color: #676666;
+}
+.centrado{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30pt;
+  color: #676666;
+}
+
+img {
+  float: right;
+}
+
+

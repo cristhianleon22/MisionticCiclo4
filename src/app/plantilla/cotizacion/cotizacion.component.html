@@ -1,0 +1,82 @@
+<h4>Solicita información</h4>
+<div class="row">
+  <form>
+    <div class ="row">
+      <div class="input-field col s6">
+        <select formControlName="estado" class="browser-default">
+          <option value="" disabled selected>Elige un estado</option>
+          <option value="rentar">En renta</option>
+          <option value="vender">En venta</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <select formControlName="modelo" class="browser-default">
+            <option value="" disabled>Elige un modelo</option>
+            <option *ngFor="let vehiculo of listadoVehiculos"  [ngValue]="vehiculo.modelo">
+              {{vehiculo.modelo}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <label>Sede</label>
+        <div class="input-field col s12">
+          <select formControlName="sede" class="browser-default">
+            <option value="" disabled>Elige una sede</option>
+            <option *ngFor="let sede of listadoSedes"  [ngValue]="sede.ciudad">
+              {{sede.ciudad}}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="nombre-cliente" type="text" class="validate" required>
+          <label for="nombre-cliente">Nombre</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="apellido-cliente" type="text" class="validate" required>
+          <label for="apellido-cliente">Apellido</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input formControlName="documento-cliente" type="text" class="validate" required>
+          <label for="documento-cliente">Cedula</label>
+        </div>
+        <div class="input-field col s6">
+          <input formControlName="telefono-cliente" type="text" class="validate" required>
+          <label for="telefono-cliente">Telefono</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="correo-cliente" type="text" class="validate" required>
+          <label for="correo-cliente">Correo</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input formControlName="nota-cliente" type="text" class="validate" required>
+          <label for="nota-cliente">Nota</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #0d47a1 blue darken-4" type="submit" style="width:100%;">Solicitar información</button>
+      </div>
+  </form>
+</div>
+
+
+

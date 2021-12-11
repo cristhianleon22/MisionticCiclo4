@@ -1,0 +1,29 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/administrador" class="breadcrumb">Home</a>
+      <a routerLink="/sedes/buscar-sede" class="breadcrumb">Sedes</a>
+      <a routerLink="/sedes/eliminar-sede/{{id}}" class="breadcrumb">Eliminar Sede</a>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="EditarSede()"class="col s12">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="ciudad" type="text" class="validate" required>
+        <label for="ciudad">Ciudad</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="departamento" type="text" class="validate" required>
+        <label for="departamento">Departamento</label>
+      </div>
+    </div>
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #0d47a1 blue darken-4" type="submit" style="width:100%;">Eliminar Sede</button>
+    </div>
+  </form>
+</div>

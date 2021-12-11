@@ -1,0 +1,96 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/asesor-home" class="breadcrumb">Home</a>
+      <a routerLink="/vehiculos/buscar-vehiculo" class="breadcrumb">Vehiculos</a>
+      <a class="breadcrumb">Editar Vehiculos</a>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="EditarVehiculo()"class="col s12">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="matricula" type="text" class="validate" required>
+        <label for="matricula" class="active">Matricula</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="marca" type="text" class="validate" required>
+        <label for="marca" class="active">Marca</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="linea" type="text" class="validate" required>
+        <label for="linea" class="active">Linea</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="modelo" type="text" class="validate" required>
+        <label for="modelo" class="active">Modelo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="cilindraje" type="text" class="validate" required>
+        <label for="cilindraje" class="active">Cilindraje</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="color" type="text" class="validate" required>
+        <label for="color" class="active">Color</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="precio" type="number" class="validate" required>
+        <label for="precio" class="active">Precio</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="foto" type="text" class="validate" required>
+        <label for="foto" class="active">Foto</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="video" type="text" class="validate" required>
+        <label for="precio" class="active">Video</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="estado" type="text" class="validate" required>
+        <label for="estado" class="active">Estado</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="descripcion" type="text" class="validate" required>
+        <label for="descripcion" class="active">Descripcion</label>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="input-field col s12">
+      <input formControlName="ubicacion" type="text" class="validate" required>
+      <label for="ubicacion" class="active">Ubicacion</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <label>Tipo de vehiculo</label>
+    <div class="input-field col s12">
+      <select multiple formControlName="tipoVehiculo" class="custom-select" class="browser-default">
+        <option value="" disabled>Elige un tipo de vehiculo</option>
+        <option *ngFor="let tipoVehiculo of listadoTipoVehiculo"  [ngValue]="tipoVehiculo.id">
+          {{tipoVehiculo.nombre}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #009688 teal" type="submit" style="width:100%;">Editar Vehiculo</button>
+    </div>
+  </form>
+</div>

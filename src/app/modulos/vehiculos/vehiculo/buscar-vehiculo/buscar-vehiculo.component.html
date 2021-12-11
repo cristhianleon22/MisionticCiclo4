@@ -1,0 +1,73 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/asesor-home" class="breadcrumb">Home</a>
+      <a routerLink="/vehiculos/buscar-vehiculo" class="breadcrumb">Vehiculos</a>
+    </div>
+  </div>
+</nav>
+<div>
+  <a routerLink="/vehiculos/crear-vehiculo" class="btn">
+        Crear Vehiculo
+  </a>
+</div>
+<table class="table responsive">
+<thead>
+  <tr>
+    <th>
+      Foto
+    </th>
+  <th>
+    Marca
+  </th>
+  <th>
+    Modelo
+  </th>
+  <th>
+    Linea
+  </th>
+  <th>
+    Editar
+  </th>
+  <th>
+    Eliminar
+  </th>
+  <th>
+    Detalle
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr *ngFor="let vehiculo of listadoVehiculos">
+    <td>
+      <img src="{{vehiculo.foto}}" border="1" alt="" width="300" height="200" />
+    </td>
+    <td>
+      {{vehiculo.marca}}
+    </td>
+    <td>
+      {{vehiculo.modelo}}
+    </td>
+    <td>
+      {{vehiculo.linea}}
+    </td>
+    <td>
+      <a routerLink="/vehiculos/editar-vehiculo/{{vehiculo.id}}" class="btn">
+        Editar
+      </a>
+    </td>
+    <td>
+      <a routerLink="/vehiculos/eliminar-vehiculo/{{vehiculo.id}}" class="btn">
+        Eliminar
+      </a>
+    </td>
+    <td>
+      <a routerLink="/vehiculos/detalle-vehiculo/{{vehiculo.id}}" class="btn">
+        Detalle
+      </a>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+

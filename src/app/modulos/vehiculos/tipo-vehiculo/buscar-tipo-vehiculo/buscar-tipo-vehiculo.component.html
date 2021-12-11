@@ -1,0 +1,60 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/administrador" class="breadcrumb">Home</a>
+      <a routerLink="/vehiculos/buscar-tipo-vehiculo" class="breadcrumb">Tipo de Vehiculos</a>
+    </div>
+  </div>
+</nav>
+<div>
+  <a routerLink="/vehiculos/crear-tipo-vehiculo" class="btn">
+        Crear Tipo de Vehiculo
+  </a>
+</div>
+<table class="table responsive">
+<thead>
+  <tr>
+    <th>
+      Nombre
+    </th>
+    <th>
+      Descripcion
+    </th>
+    <th>
+      Porcentaje
+    </th>
+  <th>
+    Editar
+  </th>
+  <th>
+    Eliminar
+  </th>
+</tr>
+</thead>
+<tbody>
+  <tr *ngFor="let tipoVehiculo of listadoTipoVehiculos">
+    <td>
+      {{tipoVehiculo.nombre}}
+    </td>
+    <td>
+      {{tipoVehiculo.descripcion}}
+    </td>
+    <td>
+      {{tipoVehiculo.porcentaje}}
+    </td>
+    <td>
+      <a routerLink="/vehiculos/editar-tipo-vehiculo/{{tipoVehiculo.id}}" class="btn">
+        Editar
+      </a>
+    </td>
+    <td>
+      <a routerLink="/vehiculos/eliminar-tipo-vehiculo/{{tipoVehiculo.id}}" class="btn">
+        Eliminar
+      </a>
+    </td>
+  </tr>
+</tbody>
+</table>
+
+
+

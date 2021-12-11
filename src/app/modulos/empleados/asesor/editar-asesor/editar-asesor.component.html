@@ -1,0 +1,58 @@
+<nav>
+  <div class="nav-wrapper #009688 teal">
+    <div class="col s12">
+      <a routerLink="/empleados/administrador" class="breadcrumb">Home</a>
+      <a routerLink="/empleados/buscar-asesor" class="breadcrumb">Asesores</a>
+      <a routerLink="/empleados/editar-asesor/{{id}}" class="breadcrumb">Editar Asesor</a>
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="EditarAsesor()"class="col s12">
+    <input type="hidden" formControlName="id" />
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="nombre" type="text" class="validate" required>
+        <label for="nombre" class="active">Nombres</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="apellido" type="text" class="validate" required>
+        <label for="apellido" class="active">Apellidos</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="correo" type="email" class="validate" required>
+        <label for="correo" class="active">Email</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="documento" type="text" class="validate" required>
+        <label for="documento" class="active">Documento</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="direccion" type="text" class="validate" required>
+        <label for="direccion" class="active">Direccion</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="telefono" type="text" class="validate" required>
+        <label for="telefono" class="active">Telefono</label>
+      </div>
+    </div>
+    <div class="row">
+      <label>Sedes</label>
+      <div class="input-field col s12">
+        <select multiple formControlName="sede" class="custom-select" class="browser-default">
+          <option value="" disabled>Elige una sede</option>
+          <option *ngFor="let sede of listadoSedes"  [ngValue]="sede.ciudad" required>
+            {{sede.ciudad}}
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #0d47a1 blue darken-4" type="submit" style="width:100%;">Editar Asesor</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,44 @@
+<div class="row">
+  <form [formGroup]="fgValidador" (ngSubmit)="GuardarCliente()"class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="nombre" type="text" class="validate" required>
+        <label for="nombre">Nombres</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="apellido" type="text" class="validate" required>
+        <label for="apellido">Apellidos</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="correo" type="email" class="validate" required>
+        <label for="correo">Email</label>
+      </div>
+      <div class="input-field col s6">
+        <input formControlName="documento" type="text" class="validate" required>
+        <label for="documento">Documento</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input formControlName="direccion" type="text" class="validate" required>
+        <label for="direccion">Direccion</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input formControlName="telefono" type="text" class="validate" required>
+        <label for="telefono">Telefono</label>
+      </div>
+      <label for="cartaLaboral">Carta Laboral</label>
+        <div class="input-field col s6">
+          <input (change)="getFileChange($event)" formControlName="cartaLaboral" type="file" class="validate" required>
+        </div>
+    </div>
+
+    <div class="row">
+      <button [disabled]="!fgValidador.valid" class="btn-large waves-effect #0d47a1 blue darken-4" type="submit" style="width:100%;">Crear Cliente</button>
+    </div>
+  </form>
+</div>

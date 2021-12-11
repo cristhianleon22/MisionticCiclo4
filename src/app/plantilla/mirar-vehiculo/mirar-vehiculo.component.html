@@ -1,0 +1,71 @@
+  <div class ="row">
+    <div class="input-field col s6">
+      <select  class="browser-default">
+        <option value="" disabled selected>Elige un estado</option>
+        <option value="rentar">En renta</option>
+        <option value="vender">En venta</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <select  class="browser-default">
+          <option value="" disabled>Elige un modelo</option>
+          <option *ngFor="let vehiculo of listadoVehiculos"  [ngValue]="vehiculo.modelo">
+            {{vehiculo.modelo}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+<table class="table responsive">
+  <thead>
+    <tr>
+      <th>
+        Foto
+      </th>
+    <th>
+      Marca
+    </th>
+    <th>
+      Modelo
+    </th>
+    <th>
+      Estado
+    </th>
+    <th>
+      Detalle
+    </th>
+    <th *ngIf="seInicioSesionCliente">
+      Solicitud
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let vehiculo of listadoVehiculos">
+      <td>
+        <img src="{{vehiculo.foto}}" border="1" alt="" width="300" height="200" />
+      </td>
+      <td>
+        {{vehiculo.marca}}
+      </td>
+      <td>
+        {{vehiculo.modelo}}
+      </td>
+      <td>
+        {{vehiculo.estado}}
+      </td>
+      <td>
+        <a routerLink="/vehiculos/detalle-vehiculo/{{vehiculo.id}}" class="btn">
+          Detalle
+        </a>
+      </td>
+      <td>
+        <a *ngIf="seInicioSesionCliente" routerLink="/solicitudes/crear-solicitud/{{vehiculo.id}}" class="btn">
+          Solicitar
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  </table>
