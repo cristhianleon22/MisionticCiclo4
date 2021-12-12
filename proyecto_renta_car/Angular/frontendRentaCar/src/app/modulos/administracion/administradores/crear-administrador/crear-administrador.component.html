@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+   
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +17,11 @@
 
       <h3 class="center-align">Crear Administrador</h3>
         
-        <form [formGroup]="fgValidador" (ngSubmit)="GuardarAdministrador()" method="POST" class="row g-3 needs-validation" novalidate>
+        <form [formGroup]="fgValidador" (ngSubmit)="GuardarAdministrador()" class="row g-3 needs-validation" novalidate>
             
             <div class="col-md-4">
                 <label for="txtdocumento" class="form-label">Documento</label>
-                <input type="text" class="form-control" id="txtdocumento" required>
+                <input formControlName="documento" type="text" class="form-control" id="documento" required>
                 <div class="invalid-feedback">
                   Campo obligatorio.
                 </div>
@@ -30,7 +31,7 @@
             
             <div class="col-md-4">
               <label for="txtnombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="txtnombre" required>
+              <input formControlName="nombre" type="text" class="form-control" id="nombre" required>
               <div class="invalid-feedback">
                 Campo obligatorio.
               </div>
@@ -38,7 +39,7 @@
             
             <div class="col-md-4">
               <label for="txtapellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="txtapellido" required>
+              <input formControlName="apellido" type="text" class="form-control" id="apellido" required>
               <div class="invalid-feedback">
                 Campo obligatorio
               </div>
@@ -46,7 +47,7 @@
             
             <div class="col-md-4">
                 <label for="txtdireccion" class="form-label">Dirección</label>
-                <input type="text" class="form-control" id="txtdireccion" required>
+                <input formControlName="direccion" type="text" class="form-control" id="direccion" required>
                 <div class="invalid-feedback">
                   Campo obligatorio
                 </div>
@@ -54,7 +55,7 @@
             
             <div class="col-md-4">
                 <label for="txttelefono" class="form-label">Teléfono</label>
-                <input type="text" class="form-control" id="txttelefono" required>
+                <input formControlName="telefono" type="text" class="form-control" id="telefono" required>
                 <div class="invalid-feedback">
                   Campo obligatorio
                 </div>
@@ -64,7 +65,7 @@
               <label for="txtcorreo" class="form-label">Correo Electrónico</label>
               <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="txtcorreo" aria-describedby="inputGroupPrepend" required>
+                <input formControlName="correo" type="text" class="form-control" id="correo" aria-describedby="inputGroupPrepend" required>
                 <div class="invalid-feedback">
                   Campo obligatorio.
                 </div>
@@ -73,7 +74,7 @@
 
             <div class="col-md-6">
                 <label for="txtclave" class="form-label">Clave</label>
-                <input type="text" class="form-control" id="txtclave" required>
+                <input formControlName="clave" type="text" class="form-control" id="clave" required>
                 <div class="invalid-feedback">
                   Campo obligatorio.
                 </div>
@@ -82,7 +83,7 @@
 
             <div class="col-md-6">
               <label for="txtsede" class="form-label">Sede</label>
-              <input type="text" class="form-control" id="txtsede" required>
+              <input formControlName="sede" type="text" class="form-control" id="sede" required>
               <div class="invalid-feedback">
                 Campo obligatorio.
               </div>
@@ -90,7 +91,7 @@
 
             <div class="col-md-3">
               <label for="txtrol" class="form-label">Roles</label>
-              <select class="form-select" id="txtrol" required>
+              <select formControlName="roles" class="form-select" id="roles" required>
                 <option selected disabled value="">Choose...</option>
                 <option>Administrador</option>
               </select>
@@ -100,7 +101,7 @@
             </div>
             
             <div class="col-12">
-              <button class="btn btn-primary" type="submit">Registrar Administrador</button>
+              <button [disabled]="!fgValidador.valid" class="btn btn-primary" type="submit">Registrar Administrador</button>
             </div>
           </form>    
    </div>

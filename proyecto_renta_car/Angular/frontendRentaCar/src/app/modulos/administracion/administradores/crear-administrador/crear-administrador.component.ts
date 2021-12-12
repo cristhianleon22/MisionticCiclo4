@@ -42,7 +42,9 @@ export class CrearAdministradorComponent implements OnInit {
     let correo = this.fgValidador.controls["correo"].value;
     let sede = this.fgValidador.controls["sede"].value;
     let clave = this.fgValidador.controls["clave"].value;
-    let roles = this.fgValidador.controls["roles"].value;
+    let rol = this.fgValidador.controls["roles"].value;
+
+    
    
     let p = new ModeloAdministrador();
     p.documento = documento;
@@ -53,9 +55,11 @@ export class CrearAdministradorComponent implements OnInit {
     p.correo = correo;
     p.sede = sede;
     p.clave = clave;
-    p.rolesId = roles;
+    p.rolesId = rol;
 
-    alert("VALOR:"+ this.fgValidador.controls["nombre"].value);
+    
+
+    alert("VALOR:");
 
     this.servicioAdministrador.CrearAdministrador(p).subscribe((datos: ModeloAdministrador) =>{
        alert("Administrador almacenado correctamente"); 

@@ -44,6 +44,7 @@ export class AdministradorController {
     }
   })
 
+//  @authenticate.skip()
   async identificarAdministrador(
     @requestBody() credenciales: Credenciales
   ){
@@ -70,7 +71,7 @@ export class AdministradorController {
     }
   }  
   
-  
+  //@authenticate.skip()
   @authenticate("admin")
   @post('/administradors')
   @response(200, {

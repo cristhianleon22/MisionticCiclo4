@@ -1,3 +1,5 @@
+
+
 <a routerLink="/administracion/crear-administrador" class="btn">Adicionar administrador</a>
 <table class="table responsive">
     <thead>
@@ -17,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngfor="let p of listadoRegistros">
+        <tr *ngFor="let p of listadoRegistros">
             <td>{{p.documento}}</td>
             <td>{{p.nombre}}</td>
             <td>{{p.apellido}}</td>
@@ -26,7 +28,7 @@
             <td>{{p.correo}}</td>
             <td>{{p.sede}}</td>
             <td>{{p.clave}}</td>
-            <td>{{p.roles}}</td>
+            <td>{{p.rolesId}}</td>
             <td>
                 <a routerLink="./administracion/editar-administrador/{{p.id}}" class="btn">Editar</a>
             </td>

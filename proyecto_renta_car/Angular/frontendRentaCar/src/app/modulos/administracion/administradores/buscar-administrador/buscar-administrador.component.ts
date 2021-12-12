@@ -24,9 +24,7 @@ listadoRegistros: ModeloAdministrador[] = [];
     this.administradorServicio.ObtenerRegistros().subscribe((datos: ModeloAdministrador[]) =>{
       this.listadoRegistros = datos;
     })
-   // this.administradorServicio.ObtenerRegistros().subscribe((datos: ModeloAdministrador[]) => {
-     // this.ListadoRegistros = datos;
-   // })
+   
   }
 
 }
