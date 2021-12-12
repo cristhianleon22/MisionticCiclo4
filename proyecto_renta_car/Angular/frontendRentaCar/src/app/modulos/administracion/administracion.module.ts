@@ -10,8 +10,8 @@ import { CrearAsesorComponent } from './asesores/crear-asesor/crear-asesor.compo
 import { EditarAsesorComponent } from './asesores/editar-asesor/editar-asesor.component';
 import { EliminarAsesorComponent } from './asesores/eliminar-asesor/eliminar-asesor.component';
 import { BuscarAsesorComponent } from './asesores/buscar-asesor/buscar-asesor.component';
+import { ListarAdministradoresComponent } from './administradores/listar-administradores/listar-administradores.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearAsesorComponent,
     EditarAsesorComponent,
     EliminarAsesorComponent,
-    BuscarAsesorComponent
+    BuscarAsesorComponent,
+    ListarAdministradoresComponent
   ],
   imports: [
     CommonModule,
