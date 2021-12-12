@@ -7,7 +7,9 @@
         <li *ngIf="seInicioSesion"><a routerLink="mision">Misión</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="vision">Visión</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Contacto</a></li>
-        <li *ngIf="seInicioSesion"><a routerLink="/administracion/crear-administrador">Gestión</a></li>
+     <!--  <li *n0gIf="seInicioSesion"><a routerLink="/administracion/crear-administrador">Gestión</a></li> -->
+        <li *ngIf="seInicioSesion"><a routerLink="./administracion/listar-administrador">Administrador</a></li>
+        <li *ngIf="seInicioSesion"><a routerLink="./vehiculos/crear-vehiculo">Vehiculo</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
         <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Registro</a></li>
@@ -22,7 +24,8 @@
     <li *ngIf="seInicioSesion"><a routerLink="vision">Visión</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Contacto</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/administracion/crear-administrador">Gestión</a></li>
+    <li *ngIf="seInicioSesion"><a routerLink="/administracion/listar-administrador">Administrador</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/seguridad/cerrarSesion">Cerrar Sesión</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="/seguridad/identificar">Iniciar Sesión</a></li>
     <li *ngIf="seInicioSesion"><a routerLink="mobile.html">Registro</a></li>
- </ul>
+</ul>

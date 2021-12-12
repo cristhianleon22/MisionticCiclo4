@@ -10,6 +10,7 @@ import { CrearAsesorComponent } from './asesores/crear-asesor/crear-asesor.compo
 import { EditarAsesorComponent } from './asesores/editar-asesor/editar-asesor.component';
 import { EliminarAsesorComponent } from './asesores/eliminar-asesor/eliminar-asesor.component';
 import { BuscarAsesorComponent } from './asesores/buscar-asesor/buscar-asesor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { BuscarAsesorComponent } from './asesores/buscar-asesor/buscar-asesor.co
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }

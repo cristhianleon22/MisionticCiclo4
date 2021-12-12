@@ -15,17 +15,22 @@ const routes: Routes = [
     component: CrearAdministradorComponent
   },
   {
-    path:'editar-administrador',
+    path:'editar-administrador/:id',
     component: EditarAdministradorComponent
   },
   {
-    path:'eliminar-administrador',
+    path:'eliminar-administrador/:id',
     component: EliminarAdministradorComponent
   },
   {
     path:'buscar-administrador',
     component: BuscarAdministradorComponent
   },
+  {
+    path:'listar-administrador',
+    component: BuscarAdministradorComponent
+  },
+
   {
     path:'crear-asesor',
     component: CrearAsesorComponent
@@ -42,8 +47,6 @@ const routes: Routes = [
     path:'buscar-asesor',
     component: BuscarAsesorComponent
   }
-
-
 ];
 
 @NgModule({

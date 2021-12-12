@@ -1,1 +1,134 @@
-<p>crear-vehiculo works!</p>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>RentaCar</title>
+  </head>
+  <body>
+
+    <div class="container">
+   
+        <h3 class="center-align">Crear Vehículo</h3>
+        <br>
+
+        <form class="row g-3 needs-validation" novalidate>
+            
+            <div class="col-md-4">
+                <label for="txtLugarMatricula" class="form-label">Lugar de matricula</label>
+                <input type="text" class="form-control" id="txtLugarMatricula" required>
+                <div class="invalid-feedback">
+                  Campo obligatorio.
+                </div>
+            </div>
+            
+            
+            
+            <div class="col-md-4">
+              <label for="txtMarca" class="form-label">Marca</label>
+              <input type="text" class="form-control" id="txtMarca" required>
+              <div class="invalid-feedback">
+                Campo obligatorio.
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+              <label for="txtModelo" class="form-label">Modelo</label>
+              <input type="text" class="form-control" id="txtModelo" required>
+              <div class="invalid-feedback">
+                Campo obligatorio
+              </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="txtColor" class="form-label">Color</label>
+                <input type="text" class="form-control" id="txtColor" required>
+                <div class="invalid-feedback">
+                  Campo obligatorio
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="txtPrecio" class="form-label">Precio</label>
+                <input type="text" class="form-control" id="txtPrecio" required>
+                <div class="invalid-feedback">
+                  Campo obligatorio
+                </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="txtDescripcion" class="form-label">Descripcion</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                <input type="text" class="form-control" id="txtDescripcion" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">
+                  Campo obligatorio.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="txtLocalizacion" class="form-label">Localizacion</label>
+                <input type="text" class="form-control" id="txtLocalizacion" required>
+                <div class="invalid-feedback">
+                  Campo obligatorio.
+                </div>
+            </div>
+            
+
+            <div class="col-md-6">
+              <label for="txtDireccion" class="form-label">Direccion</label>
+              <input type="text" class="form-control" id="txtDireccion" required>
+              <div class="invalid-feedback">
+                Campo obligatorio.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+                <label for="txtTipoVehiculo" class="form-label">Tipo de Vehiculo</label>
+                <input type="text" class="form-control" id="txtTipoVehiculo" required>
+                <div class="invalid-feedback">
+                  Campo obligatorio.
+                </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="txtTipoOferta" class="form-label">Tipo Oferta</label>
+              <select class="form-select" id="txtTipoOferta" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Administrador</option>
+              </select>
+              <div class="invalid-feedback">
+                Campo obligatorio.
+              </div>
+            </div>
+            
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Registrar Vehiculo</button>
+            </div>
+          </form>    
+   </div>
+    
+    <script type="text/javascript" src="recursos/funciones.js">
+
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

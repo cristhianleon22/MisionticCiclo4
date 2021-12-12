@@ -1,3 +1,4 @@
+import { authenticate } from '@loopback/authentication';
 import { service } from '@loopback/core';
 import {
   Count,
@@ -25,6 +26,7 @@ import {AdministradorRepository} from '../repositories';
 import {AutenticacionService} from '../services';
 const fetch = require('node-fetch');// se agrega fetch
 
+@authenticate("admin")
 export class AdministradorController {
   constructor(
     @repository(AdministradorRepository)
@@ -69,7 +71,7 @@ export class AdministradorController {
   }  
   
   
-  
+  @authenticate("admin")
   @post('/administradors')
   @response(200, {
     description: 'Administrador model instance',
@@ -111,11 +113,14 @@ export class AdministradorController {
     description: 'Administrador model count',
     content: {'application/json': {schema: CountSchema}},
   })
+ 
   async count(
     @param.where(Administrador) where?: Where<Administrador>,
   ): Promise<Count> {
     return this.administradorRepository.count(where);
   }
+
+  @authenticate.skip()
 
   @get('/administradors')
   @response(200, {
