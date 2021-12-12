@@ -26,7 +26,7 @@ import {AdministradorRepository} from '../repositories';
 import {AutenticacionService} from '../services';
 const fetch = require('node-fetch');// se agrega fetch
 
-@authenticate("admin")
+//@authenticate("admin")
 export class AdministradorController {
   constructor(
     @repository(AdministradorRepository)
@@ -44,7 +44,7 @@ export class AdministradorController {
     }
   })
 
-//  @authenticate.skip()
+  //@authenticate.skip()
   async identificarAdministrador(
     @requestBody() credenciales: Credenciales
   ){
@@ -72,7 +72,7 @@ export class AdministradorController {
   }  
   
   //@authenticate.skip()
-  @authenticate("admin")
+ // @authenticate("admin")
   @post('/administradors')
   @response(200, {
     description: 'Administrador model instance',
@@ -121,7 +121,7 @@ export class AdministradorController {
     return this.administradorRepository.count(where);
   }
 
-  @authenticate.skip()
+ // @authenticate.skip()
 
   @get('/administradors')
   @response(200, {

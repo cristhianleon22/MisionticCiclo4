@@ -13,7 +13,7 @@ export class AdministradorService {
   token: String = '';
   constructor(private http:HttpClient, 
     private seguridadService: SeguridadService) {
-    this.token = this.seguridadService.ObtenerToken();
+    //his.token = this.seguridadService.ObtenerToken();
    }
 
   ObtenerRegistros(): Observable<ModeloAdministrador[]>{
@@ -23,7 +23,7 @@ export class AdministradorService {
   CrearAdministrador(administrador: ModeloAdministrador): Observable<ModeloAdministrador>{
     return this.http.post<ModeloAdministrador>(`${this.url}/administradors`, administrador,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}` 
+        //'Authorization': `Bearer ${this.token}` 
       })
     }) 
     
@@ -32,7 +32,7 @@ export class AdministradorService {
   ActualizarAdministrador(administrador: ModeloAdministrador): Observable<ModeloAdministrador>{
     return this.http.put<ModeloAdministrador>(`${this.url}/administradors`, administrador,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}` 
+       // 'Authorization': `Bearer ${this.token}` 
       })
     }) 
   }
@@ -41,7 +41,7 @@ export class AdministradorService {
   EliminarAdministrador(id: string): Observable<any>{
     return this.http.delete(`${this.url}/administradors/${id}`,{
       headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}` 
+        //'Authorization': `Bearer ${this.token}` 
       })
     }) 
     
