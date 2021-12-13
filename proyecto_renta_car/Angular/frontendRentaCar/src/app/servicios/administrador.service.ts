@@ -20,6 +20,10 @@ export class AdministradorService {
     return this.http.get<ModeloAdministrador[]>(`${this.url}/administradors`);
   }
 
+  ObtenerRegistroPorId(id: string): Observable<ModeloAdministrador>{
+    return this.http.get<ModeloAdministrador>(`${this.url}/administradors/${id}`);
+  }
+
   CrearAdministrador(administrador: ModeloAdministrador): Observable<ModeloAdministrador>{
     return this.http.post<ModeloAdministrador>(`${this.url}/administradors`, administrador,{
       headers: new HttpHeaders({
@@ -30,7 +34,7 @@ export class AdministradorService {
   }
 
   ActualizarAdministrador(administrador: ModeloAdministrador): Observable<ModeloAdministrador>{
-    return this.http.put<ModeloAdministrador>(`${this.url}/administradors`, administrador,{
+    return this.http.put<ModeloAdministrador>(`${this.url}/administradors/${administrador.id}`, administrador,{
       headers: new HttpHeaders({
        // 'Authorization': `Bearer ${this.token}` 
       })
