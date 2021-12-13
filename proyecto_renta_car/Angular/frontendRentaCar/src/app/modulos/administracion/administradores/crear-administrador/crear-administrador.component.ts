@@ -57,9 +57,6 @@ export class CrearAdministradorComponent implements OnInit {
     p.clave = clave;
     p.rolesId = rol;
 
-    
-
-    alert("VALOR:");
 
     this.servicioAdministrador.CrearAdministrador(p).subscribe((datos: ModeloAdministrador) =>{
        alert("Administrador almacenado correctamente"); 
