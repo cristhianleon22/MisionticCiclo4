@@ -160,7 +160,7 @@ export class AdministradorController {
     return this.administradorRepository.updateAll(administrador, where);
   }
 
-  @authenticate.skip()
+  //@authenticate.skip()
   @get('/administradors/{id}')
   @response(200, {
     description: 'Administrador model instance',
