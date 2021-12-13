@@ -75,7 +75,11 @@ export class EditarAdministradorComponent implements OnInit {
     p.sede = sede;
     p.clave = clave;
     p.rolesId = rol;
+<<<<<<< HEAD
+    p.id = this.id;
+=======
     p.id=this.id;
+>>>>>>> c4e3a36104fde48d8225cece24d19a4a4e5f6c39
 
    this.servicioAdministrador.ActualizarAdministrador(p).subscribe((datos: ModeloAdministrador) =>{
        alert("Administrador actualizado correctamente"); 

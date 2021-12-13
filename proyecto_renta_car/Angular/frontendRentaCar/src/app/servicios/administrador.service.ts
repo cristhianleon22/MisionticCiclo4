@@ -41,7 +41,6 @@ export class AdministradorService {
     }) 
   }
 
-  
   EliminarAdministrador(id: string): Observable<any>{
     return this.http.delete(`${this.url}/administradors/${id}`,{
       headers: new HttpHeaders({
@@ -50,5 +49,7 @@ export class AdministradorService {
     }) 
     
   }
+
+  
 
 }
